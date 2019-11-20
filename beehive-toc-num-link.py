@@ -31,7 +31,7 @@ with open('toc_vol2.csv', 'r') as f:
             page_range = list(range(int(row['first_entry']), int(row['last_entry']) + 1))
             pages.update({row['pid']: page_range})
 
-with open('alpha-linked.csv', 'r') as file:
+with open('alpha-cleaned.csv', 'r') as file:
     df = pd.read_csv(file)
     df.fillna('', inplace=True)
     for row in df.index:
@@ -42,29 +42,33 @@ with open('alpha-linked.csv', 'r') as file:
             for i in xrefs:
                 if find_numbers(i) == False: # take care of stray entries
                     xref_list.append(i)
-                elif i.startswith('<a href'): # get rid of alpha links
+                elif i.startswith('<a href'): # get rid of links
                         xref_list.append(i)
-                elif i.endswith('[PAGE_MISSING]'): # preserve missing pages
+                elif ('[PAGE_MISSING')in i: # preserve missing pages
                         xref_list.append(i)
                 else:
                     num = int(re.search(r'\d+', i).group())
                     for pid, contents in pages.items():
                         if num in contents:
-                            annotation = f"<a href='/New_Beehive/toc_vol2/{pid}/'>{i}</a>"
+                            annotation = f"<a href='/digital-beehive/toc/{pid}/'>{i}</a>"
                             xref_list.append(annotation)
+                        else: 
+                            continue
         else:
             if find_numbers(xref) == False:
                 xref_list.append(xref)
             elif xref.startswith('<a href'):
                 xref_list.append(xref)
-            elif xref.endswith('[PAGE_MISSING]'):
+            elif ('[PAGE_MISSING]') in xref:
                 xref_list.append(xref)
             else:
                 num = int(re.search(r'\d+', xref).group())
                 for pid, contents in pages.items():
                     if num in contents:
-                        annotation = f"<a href='/New_Beehive/toc_vol2/{pid}/'>{xref}</a>"
+                        annotation = f"<a href='/digital-beehive/toc/{pid}/'>{xref}</a>"
                         xref_list.append(annotation)
+                    else: 
+                        continue
         new_xref = '|'.join(xref_list)
         df.loc[row,'xref'] = new_xref
         
@@ -74,24 +78,26 @@ print('Alphabetical section done.')
 with open('index-linked.csv', 'r') as eff:
     idx = pd.read_csv(eff)
     idx.fillna('',inplace=True)
-    for row in idx.index:
-        entry = str(idx.loc[row,'entry'])
+    for line in idx.index:
+        entry = str(idx.loc[line,'entry'])
         entry_list = []
         if '|' in entry:
             entries = entry.split('|')
-            for i in entries:
-                if find_numbers(i) == False:
-                    entry_list.append(i)
-                elif i.startswith('<a href'):
-                    entry_list.append(i)
-                elif '[PAGE_MISSING' in i:
-                    entry_list.append(i)
+            for item in entries:
+                if find_numbers(item) == False:
+                    entry_list.append(item)
+                elif item.startswith('<a href'):
+                    entry_list.append(item)
+                elif '[PAGE_MISSING' in item:
+                    entry_list.append(item)
                 else:
-                    num = int(re.search(r'\d+', i).group())
+                    num = int(re.search(r'\d+', item).group())
                     for pid, contents, in pages.items():
                         if num in contents:
-                            annotation = f"<a href='/New_Beehive/toc_vol2/{pid}/'>{i}</a>"
-                            entry_list.append(annotation)
+                            annot = f"<a href='/digital-beehive/toc/{pid}/'>{item}</a>"
+                            entry_list.append(annot)
+                        else:
+                            continue
         else:
             if find_numbers(entry) == False:
                 entry_list.append(entry)
@@ -103,10 +109,12 @@ with open('index-linked.csv', 'r') as eff:
                 num = int(re.search(r'\d+', entry).group())
                 for pid, contents in pages.items():
                     if num in contents:
-                        annotation = f"<a href='/New_Beehive/toc_vol2/{pid}/'>{entry}</a>"
-                        entry_list.append(annotation)
+                        annot = f"<a href='/digital-beehive/toc/{pid}/'>{entry}</a>"
+                        entry_list.append(annot)
+                    else:
+                        continue
         new_entry = '|'.join(entry_list)
-        idx.loc[row,'entry'] = new_entry
+        idx.loc[line,'entry'] = new_entry
 
 linked_index = idx.to_csv('index-num-linked.csv', index=False)
 print('Index done.')

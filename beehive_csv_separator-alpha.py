@@ -90,3 +90,28 @@ with open('alpha-num-linked.csv', 'r') as f:
 
                     
 print('Done')
+
+with open('alpha-num-linked.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    
+    with open('num1.csv', 'w') as out_file:
+        fieldnames = reader.fieldnames
+        writer = csv.DictWriter(out_file, delimiter=',', fieldnames=fieldnames)
+        writer.writeheader()
+        for row in reader:
+            if row['pid'].startswith('num'):
+                if int(row['entry']) <= 250:
+                    writer.writerow(row)
+                    
+with open('alpha-num-linked.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    
+    with open('num2.csv', 'w') as out_file:
+        fieldnames = reader.fieldnames
+        writer = csv.DictWriter(out_file, delimiter=',', fieldnames=fieldnames)
+        writer.writeheader()
+        for row in reader:
+            if row['pid'].startswith('num'):
+                if int(row['entry']) > 250:
+                    writer.writerow(row)
+
