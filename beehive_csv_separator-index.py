@@ -19,7 +19,7 @@ import collections
 # This assumes you are in the '_data' directory for your Jekyll site.
 # 'alpha.csv' is the csv from the data grab.
 
-with open('index-p-and-see.csv', 'r') as f:
+with open('index-crochets.csv', 'r') as f:
     reader = csv.DictReader(f)   
     # 'alpha1.csv' is the file that will be created with the first set of entries 
 
@@ -35,7 +35,7 @@ with open('index-p-and-see.csv', 'r') as f:
                 writer.writerow(index1) # writes rows to csv
                     
         # terrible, inelegant code, but now we just repeat with the next sets
-with open('index-p-and-see.csv', 'r') as f:
+with open('index-crochets.csv', 'r') as f:
     reader = csv.DictReader(f)   
     
     with open('index2.csv', 'w', newline='') as out_file:
@@ -48,7 +48,7 @@ with open('index-p-and-see.csv', 'r') as f:
                 fieldnames = index2.keys() # gets fieldnames from csv
                 writer.writerow(index2) # writes rows to csv
 
-with open('index-p-and-see.csv', 'r') as f:
+with open('index-crochets.csv', 'r') as f:
     reader = csv.DictReader(f)   
 
     with open('index3.csv', 'w', newline='') as out_file:
@@ -62,7 +62,7 @@ with open('index-p-and-see.csv', 'r') as f:
                 writer.writerow(index3) # writes rows to csv
 
                     
-with open('index-p-and-see.csv', 'r') as f:
+with open('index-crochets.csv', 'r') as f:
     reader = csv.DictReader(f)   
 
     with open('index4.csv', 'w', newline='') as out_file:
@@ -75,18 +75,17 @@ with open('index-p-and-see.csv', 'r') as f:
                 fieldnames = index4.keys() # gets fieldnames from csv
                 writer.writerow(index4) # writes rows to csv
                     
-with open('index-p-and-see.csv', 'r') as f:
+with open('index-crochets.csv', 'r') as f:
     reader = csv.DictReader(f)   
 
     with open('index5.csv', 'w', newline='') as out_file:
         writer = csv.DictWriter(out_file, delimiter=',', fieldnames=fieldnames)
         writer.writeheader()
         for row in reader:
-            if row['first_letter'].startswith(('T', 'U', 'W', 'X', 'Y', 'Z')):
+            if row['first_letter'].startswith(('T', 'U', 'W', 'X', 'Y', 'Z', 'i')):
                 index5 = collections.OrderedDict()
                 index5.update(row)
                 fieldnames = index5.keys() # gets fieldnames from csv
                 writer.writerow(index5) # writes rows to csv
-
                     
 print('Done')
