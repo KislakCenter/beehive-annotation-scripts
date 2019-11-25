@@ -6,13 +6,12 @@ Created on Fri Aug 16 10:35:28 2019
 @author: davidnelson
 
 The following script will take the data export from the Beehive and put it in
-an order closely approximating Pastorius's order. Some of the insertion 
-crochets in Volume 3 may be misplaced as they fall outside the expected values
-for the columns. 
+an order closely approximating Pastorius's order. As of 2019-25-11, all entries
+should be correctly placed.
 
 The code assumes that volumes one and two only needed to be sorted along the 
 y axis and that no boxes have been redrawn for Volume 3 since the data pull
-on 2019-08-19. If multi-column sections have been annotated in Volume 1 or 2,
+on 2019-11-13. If multi-column sections have been annotated in Volume 1 or 2,
 the code will have to be updated.
 
 The script will also assign pids and metadata for the "first_letter" column
@@ -25,23 +24,39 @@ export (for example, tests or entries from sections that haven't been
 reviewed.) This code will not delete bad or 'problem' entries. The code will
 alert you of any entries that don't fit the expected schema.
 
-A future version of this code will compute columns in volume three through use
-of the right-hand margin of the box rather than the left-hand margin of the
-box. This should correct entries that are currently misplaced in this version.
+
+This script will automatically add IIIF urls for the Beehive for thumbnails for
+the data from the data export.
+
+For the index, thumbnails are small versions of the annotation. For the 
+alphabetical section, thumbnails of the annotation are visually unsatisfying.
+The script will then select the upper left-hand corner of each annotation,
+assuming that the word falls somewhere in this range. The values may need
+to be updated if the code produces too many unsatisfactory images. 
+
+The script finally adds "label" metadata necessary for the Wax galleries.
 """
+
 import re
 import pandas as pd
 import csv
+import os
 
 # get x value from IIIF URL
+# takes value of right edge to avoid sorting errors that result when only using
+# the x value
+
 def find_x_value(item):
-    loc = re.compile('/\d+,\d+,\d+,\d+/')
+    loc = re.compile('/\d+')
     loc_info = loc.search(item).group()
-    end_value = re.compile(',\d+,\d+,\d+/')
-    strip = end_value.search(loc_info).group()
-    loc_info = loc_info.replace(strip, '')
-    loc_info = loc_info.strip('/')
-    return(loc_info)
+    end_value = re.compile(',\d+,\d+/')
+    to_strip = re.compile(',\d+/')
+    end_match = end_value.search(item).group()
+    end_strip = to_strip.search(item).group()
+    loc_info = int(loc_info.strip('/'))
+    end_match = int(end_match.replace(end_strip, '').strip(','))
+    total = loc_info + end_match
+    return(total)
 
 # get y value from IIIF URL
 def find_y_value(item):
@@ -62,12 +77,14 @@ with open('beehive-data-raw.csv', 'r') as f: # path to your file goes here
     df = pd.read_csv(f)
     df.fillna('',inplace=True)
     df['sort_value'] = '' # make new empty column for sorting
-
+    
 # handle insertions
     
 insertion_xref = re.compile('\[:\d+\.\]')
 tag = re.compile('#item-\w+')
 df['insertion'] = ''
+
+print('Parsing insertions...')
 
 for row in df.index:
     if 'Insertion Xref' in df.loc[row, 'unparsed']:
@@ -80,11 +97,15 @@ for row in df.index:
         unparsed = df.loc[row, 'unparsed']
         insert = insertion_xref.search(unparsed).group()
         df.loc[row, 'insertion'] = insert
+        
+print('Insertions parsed.')
 
 # to sort, we concatenate the volume number, image number, x value and y value
 # into one string that we can then sort. Since the x values for volume 3
 # will fall between a range, we need to sort them into columns based on this
 # x value.
+
+print('Sorting data...')
 
 for row in df.index:
     url = df.loc[row,'selection']
@@ -95,17 +116,20 @@ for row in df.index:
     img = df.loc[row,'image_number']
     if vol != '3': # for volumes 1 and 2, assign dummy value "1"
         column = '1'
+    elif df.loc[row, 'head'] == 'Quakers':  # sole entry that can't be sorted
+                                            # automatically
+        column = '1'
     elif img % 2 == 0: # for versos in Volume 3
-        if int(new_x_value) < 979:
+        if int(new_x_value) < 1400:
             column = '1'
-        elif 979 <= int(new_x_value) < 1600:
+        elif 1400 <= int(new_x_value) < 2010:
             column = '2'
         else:
             column = '3'
     else: # for rectos in volume 3
-        if int(new_x_value) < 730:
+        if int(new_x_value) < 1000:
             column = '1'
-        elif 730 <= int(new_x_value) < 1301:
+        elif 1000 <= int(new_x_value) < 1800:
             column = '2'
         else:
             column = '3'
@@ -123,6 +147,8 @@ new_csv = df.to_csv('beehive-data-sorted.csv', index=False)
 print('Data sorted.')
 
 # now we assign necessary wax metadata, starting with pids
+
+print('Assigning pids...')
 
 df.insert(0, 'pid','')    
 n = 1
@@ -158,6 +184,8 @@ print('Pids created.')
 # index.
 
 # First letter metadata for numerical entries sorts the numbers within a range.
+
+print('Creating additional metadata...')
 
 df.insert(6,'first_letter','')
 alpha_problems = {}
@@ -238,5 +266,54 @@ for row in df.index:
 df = df.sort_index().reset_index(drop=True)
 df['thumbnail'] = '' #create empty thumbnail column for next part of the code.
  
-new_csv = df.to_csv('beehive-data-sorted-for-wax.csv', index=False)
-print('File created.')
+new_csv = df.to_csv('beehive-data-temp.csv', index=False)
+
+selec = re.compile(r',\d+,\d+/full')
+
+print('Creating thumbnails...')
+
+with open('beehive-data-temp.csv', 'r') as csvfile, open('beehive-data.csv', 'w') as newfile:
+    reader = csv.DictReader(csvfile, delimiter=',')
+    fields = reader.fieldnames
+    writer = csv.DictWriter(newfile, delimiter=',', fieldnames=fields)
+    writer.writeheader()
+    for row in reader:
+        annotation = row['selection']
+        if row['volume'] == 'Volume 3':
+            annotation = annotation.replace('full', '150,')
+            row['thumbnail'] = annotation
+            writer.writerow(row)
+        else: 
+            old = selec.search(annotation).group()
+            annotation = annotation.replace(old, ',600,180/250,')
+            row['thumbnail'] = annotation
+            writer.writerow(row)
+            
+print('Thumbnails created.')
+
+print('Writing labels...')
+with open('beehive-data.csv', 'r') as f:
+    df = pd.read_csv(f)
+    df.fillna('',inplace=True)
+    df['label'] = ''
+for row in df.index:
+    pid = str(df.loc[row, 'pid'])
+    entry = str(df.loc[row,'entry'])
+    if pid.startswith('alpha'):
+        df.loc[row,'label'] = entry
+    elif pid.startswith('num'):
+        topic = str(df.loc[row,'topic'])
+        df.loc[row,'label'] = f'{entry}. {topic}'
+    elif pid.startswith('index'):
+        head = str(df.loc[row,'head'])
+        df.loc[row,'label'] = head
+
+# line = pd.DataFrame({'volume': 'Volume 0', 'image_number': 0, 'unparsed': 'Force UTF-8: büngt'}, index=[-1])
+# df = df.append(line, ignore_index=False, sort=False)
+# df = df.sort_index().reset_index(drop=True)
+new_csv = df.to_csv('beehive-data-for-wax.csv',index=False)
+print('Labels created.')
+
+os.remove('beehive-data-temp.csv')
+os.remove('beehive-data.csv')
+
