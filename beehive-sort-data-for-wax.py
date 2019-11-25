@@ -34,7 +34,11 @@ The script will then select the upper left-hand corner of each annotation,
 assuming that the word falls somewhere in this range. The values may need
 to be updated if the code produces too many unsatisfactory images. 
 
-The script finally adds "label" metadata necessary for the Wax galleries.
+The script also adds "label" metadata necessary for the Wax galleries.
+
+Finally, this script will create links for entries in the Beehive data export
+to their corresponding page generated from the Table of Contents CSV.
+You need a copy of the master table fo contents CSV.
 """
 
 import re
@@ -69,6 +73,16 @@ def find_y_value(item):
     loc_info = loc_info.replace(to_strip, '')
     loc_info = loc_info.replace(also_strip, '')
     return(loc_info)
+    
+def get_pids(data):
+    reader = csv.DictReader(data)
+    pages = {}
+    for row in reader:
+        vol = row['volume']
+        img = str(row['image']).zfill(3)
+        loc = f'{vol}.{img}'
+        pages.update({loc: row['pid']})
+    return pages
 
 def find_numbers(entry):
     return any(char.isdigit() for char in entry)
@@ -307,6 +321,29 @@ for row in df.index:
     elif pid.startswith('index'):
         head = str(df.loc[row,'head'])
         df.loc[row,'label'] = head
+        
+# create links to wax pages for toc
+        
+print('Creating links to ToC pages...')
+
+with open('master_toc.csv', 'r') as f:
+    toc = get_pids(f)
+
+df['location'] = ''
+for row in df.index:
+    volume = str(df.loc[row,'volume'])
+    volume = volume.strip('Volume ')
+    image = str(df.loc[row,'image_number']).zfill(3)
+    loc = f'{volume}.{image}'
+    try:
+        pid = toc[loc]
+        pid_link = f"<a href='/digital-beehive/toc/{pid}/'>Full Page</a>"
+        df.loc[row,'location'] = pid_link
+    except:
+        print(f"Data bad for {df.loc[row,'pid']}.")
+        
+new_csv = df.to_csv('beehive-data-toc-link.csv', index=False)
+print('Done.')
 
 # line = pd.DataFrame({'volume': 'Volume 0', 'image_number': 0, 'unparsed': 'Force UTF-8: büngt'}, index=[-1])
 # df = df.append(line, ignore_index=False, sort=False)
@@ -316,4 +353,3 @@ print('Labels created.')
 
 os.remove('beehive-data-temp.csv')
 os.remove('beehive-data.csv')
-
