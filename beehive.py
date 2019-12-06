@@ -52,6 +52,15 @@ def num_annotator(entry, ref):
         return f"<a href='/digital-beehive/num2/{pid}/'>{ref}</a>"
 
 
+def corrections_annotator(entry, ref):
+    pid = entry['pid'].to_list()
+    pid = pid[0]
+    if pid.startswith('num'):
+        return num_annotator(entry, ref)
+    elif pid.startswith('alpha'):
+        return alpha_annotator(entry, ref)
+
+
 def index_annotator(item, ref):
     '''
     This function will create links in HTML syntax to index headers in
