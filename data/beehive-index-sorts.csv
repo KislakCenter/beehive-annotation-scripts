@@ -70,7 +70,7 @@ head,first_letter
 13to cleanse,C
 13to cleave,C
 13to com[m]end,C
-13to comunicate,C
+13to com[m]unicate,C
 14pair of compasses,C
 14to conceal,C
 14to confiscate,C
@@ -82,7 +82,7 @@ head,first_letter
 14to correct,C
 15native Country,C
 15be of good Courage,C
-15wom : Courses,C
+15wom: Courses,C
 15to court,C
 15to creep,C
 15to crucify,C
@@ -119,8 +119,8 @@ head,first_letter
 18family duties,D
 18to dwell,D
 "18great Eaters, and to eat",E
-18[:10.],E
-18[:59.],E
+18[:10.],D
+18[:59.],D
 18to effect,E
 18To embrace,E
 18to encompass,E
@@ -226,6 +226,7 @@ head,first_letter
 28to list sould,L
 28to live,L
 28to live well,L
+29womens longing,L
 29to look,L
 29to look over,L
 29to loose,L
@@ -315,6 +316,7 @@ head,first_letter
 37the pretender,P
 37to prevail,P
 37to proceed,P
+37to produce,P
 37to prolong,P
 37false prophets,P
 37to propose,P
@@ -436,6 +438,7 @@ head,first_letter
 45to strangle,S
 45to stretch,S
 45to stumble,S
+45to suffer or bear,S
 46Lord's Supper,S
 46to suppress,S
 46I am sure,S
