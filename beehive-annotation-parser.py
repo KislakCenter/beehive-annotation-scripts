@@ -104,9 +104,6 @@ for row in df.index:
             except IndexError:
                 print(f'{head} has a bad match.')
                 entry_list.append(entry)
-
-            else:
-                entry_list.append(entry)
         elif beehive.find_numbers(entry) is True:
             num_entry = int(re.search(r'\d+', entry).group())
             if num_entry <= 496:
