@@ -71,7 +71,7 @@ with open('data/alpha-corrections.csv', 'r') as ip:
     for row in corrections_reader:
         corrections.update({row['input']: row['match']})
 
-with open('beehive-data-network.csv', 'r') as ip, open(
+with open('data/beehive-data-network.csv', 'r') as ip, open(
         'beehive-edges.csv', 'w') as op:
     reader = csv.DictReader(ip)
     fields = ['source', 'target']
