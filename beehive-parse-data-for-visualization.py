@@ -131,7 +131,7 @@ nodes = set(nodes_list)
 print(len(nodes))
 print(len(edges))
 
-G = nx.Graph()
+G = nx.DiGraph()
 G.add_nodes_from(nodes)
 G.add_edges_from(edges)
 
@@ -144,15 +144,13 @@ necessity_pocket_path = nx.shortest_path(G,
                                          source='necessity', target='pocket')
 print('Shortest path from "Necessity" to "Pocket":', necessity_pocket_path)
 
-print(nx.is_connected(G))
+# components = nx.connected_components(G)
+# largest_component = max(components, key=len)
+# subgraph = G.subgraph(largest_component)
+# diameter = nx.diameter(subgraph)
+# print('Network diameter of largest component:', diameter)
 
-components = nx.connected_components(G)
-largest_component = max(components, key=len)
-subgraph = G.subgraph(largest_component)
-diameter = nx.diameter(subgraph)
-print('Network diameter of largest component:', diameter)
-
-nx.write_gexf(subgraph, 'beehive-sub.gexf')
+# nx.write_gexf(subgraph, 'beehive-sub.gexf')
 
 triadic_closure = nx.transitivity(G)
 print('Triadic closure:', triadic_closure)
