@@ -104,6 +104,13 @@ def write_num_csv(infile, outfile, cond1, cond2):
                 if cond1 <= int(row['entry']) <= cond2:
                     writer.writerow(row)
 
+
+def add_or_append(dictionary, key, value):
+    if key not in dictionary:
+        dictionary[key] = []
+    dictionary[key].append(value)
+
+
 def load_corrections(data):
     with open(data, 'r') as f:
         reader = csv.DictReader(f, delimiter=',')
@@ -113,7 +120,12 @@ def load_corrections(data):
         return corrections
 
 
-def add_or_append(dictionary, key, value):
-    if key not in dictionary:
-        dictionary[key] = []
-    dictionary[key].append(value)
+def load_issues(data):
+    with open(data, 'r') as f:
+        reader = csv.DictReader(f, delimiter=',')
+        issues = {}
+        for row in reader:
+            add_or_append(issues, row['item'], row['problem'])
+        for i in issues.keys():
+            issues[i] = '|'.join(issues[i])
+        return issues

@@ -164,6 +164,22 @@ for row in df.index:
         df.loc[row, 'index'] = new_index
 
 df = df.drop(['num_match'], axis=1)
+
+# write issues from issue trackers
+
+df['issue'] = ''
+
+# load issues
+
+alpha_issues = beehive.load_issues('data/alpha-issues.csv')
+num_issues = beehive.load_issues('data/num-issues.csv')
+index_issues = beehive.load_issues('data/index-issues.csv')
+
+for i in alpha_issues.keys():
+    match = df[df['item'] == i]
+    print(match['entry'])
+
+ 
 linked_csv = df.to_csv('beehive-data-linked.csv', index=False)
 print('Links to index done.')
 
