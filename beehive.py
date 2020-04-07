@@ -42,10 +42,14 @@ def num_annotator(entry, ref):
     This function will create links in HTML syntax to numerical entries
     in the Beehive.
     '''
-    pid = entry['pid'].to_list()
-    pid = pid[0]
-    num = entry['entry'].to_list()
-    num = int(num[0])
+    try:
+        pid = entry['pid'].to_list()
+        pid = pid[0]
+        num = entry['entry'].to_list()
+        num = int(num[0])
+    except AttributeError:
+        pid = entry['pid']
+        num = int(entry['entry'])
     if int(num) <= 250:
         return f"<a href='/digital-beehive/num1/{pid}/'>{ref}</a>"
     elif int(num) > 250:

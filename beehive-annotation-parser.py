@@ -176,10 +176,17 @@ num_issues = beehive.load_issues('data/num-issues.csv')
 index_issues = beehive.load_issues('data/index-issues.csv')
 
 for i in alpha_issues.keys():
-    match = df[df['item'] == i]
-    print(match['entry'])
+    match = df.index[df['item'] == i].tolist()
+    df.loc[match, 'issue'] = alpha_issues[i]
 
- 
+for i in num_issues.keys():
+    match = df.index[df['item'] == i].tolist()
+    df.loc[match, 'issue'] = num_issues[i]
+
+for i in index_issues.keys():
+    match = df.index[df['item'] == i].tolist()
+    df.loc[match, 'issue'] = index_issues[i]
+
 linked_csv = df.to_csv('beehive-data-linked.csv', index=False)
 print('Links to index done.')
 
@@ -302,6 +309,28 @@ for row in df.index:
     df.loc[row, 'xref'] = new_xref
 
 print('Alvearium cross-references created.')
+
+# Create metadata that alerts user when a numerical entry shares an entry
+# number with another entry
+
+df['also_in_entry'] = ''
+
+for row in df.index:
+    entry = df.loc[row, 'entry']
+    topic = df.loc[row, 'topic']
+    also_in_list = []
+    if beehive.find_numbers(entry) is True:
+        entry_match = df[df['entry'] == entry]
+        if len(entry_match) > 1:
+            for item in entry_match.index:
+                if df.iloc[item]['topic'] != topic:
+                    also_entry = beehive.num_annotator(
+                            df.iloc[item], df.iloc[item]['topic'])
+                    also_in_list.append(also_entry)
+    also_in = '|'.join(also_in_list)
+    df.loc[row, 'also_in_entry'] = also_in
+
+print('Also in data created.')
 
 # =============================================================================
 # Now we handle page links. You'll need the data file with Pastorius's
