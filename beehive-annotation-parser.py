@@ -69,23 +69,23 @@ for row in df.index:
                         annotation = beehive.alpha_annotator(index_match, 'a')
                         entry_list.append(annotation)
                     except IndexError:
-                        print(f'{head} has a bad match')
+                        print(f'{head} has a problem with "a."')
                         entry_list.append(i)
-                # numerical section annotated up to 496 for now, so we
-                # can try to link these
+                # numerical section annotated up to 1000 for now, so we
+                # can try to link these. Adjust number at next datapull
                 elif beehive.find_numbers(i) is True:
                     num_entry = int(re.search(r'\d+', i).group())
-                    if num_entry <= 496:
+                    if '[PAGE_MISSING' in i:
+                        entry_list.append(i)
+                    elif num_entry <= 1000:
                         match = df[df['num_match'] == i]
                         try:
                             annotation = beehive.num_annotator(
                                     match, i)
                             entry_list.append(annotation)
                         except IndexError:
-                            print(f'{head} has a bad match.')
+                            print(f'{head} has a numerical problem.')
                             entry_list.append(i)
-                    elif '[PAGE_MISSING' in i:
-                        entry_list.append(i)
                     else:
                         for pid, contents in pages.items():
                             if num_entry in contents:
@@ -102,11 +102,13 @@ for row in df.index:
                 annotation = beehive.alpha_annotator(index_match, 'a')
                 entry_list.append(annotation)
             except IndexError:
-                print(f'{head} has a bad match.')
+                print(f'{head} has a problem with "a."')
                 entry_list.append(entry)
         elif beehive.find_numbers(entry) is True:
             num_entry = int(re.search(r'\d+', entry).group())
-            if num_entry <= 496:
+            if '[PAGE_MISSING' in entry:
+                entry_list.append(entry)
+            elif num_entry <= 1000:
                 match = df[df['num_match'] == entry]
                 try:
                     annotation = beehive.num_annotator(match, entry)
@@ -114,8 +116,6 @@ for row in df.index:
                 except IndexError:
                     print(f'{head} has a numerical problem.')
                     entry_list.append(entry)
-            elif '[PAGE_MISSING' in entry:
-                entry_list.append(entry)
             else:
                 for pid, contents in pages.items():
                     if num_entry in contents:
@@ -144,7 +144,8 @@ for row in df.index:
                     annotation = beehive.index_annotator(index_match, i)
                     index_list.append(annotation)
                 except IndexError:
-                    print(f"{df.loc[row, 'topic']} has an index problem.")
+                    print(f"{df.loc[row, 'entry']} {df.loc[row, 'topic']} "
+                          "has an index problem.")
                     index_list.append(i)
         # handle missing entries separately to avoid excessive errors
         elif index == '[NOT_IN_INDEX]':
@@ -238,7 +239,9 @@ for row in df.index:
                 xref_list.append(annotation)
             elif beehive.find_numbers(i) is True:
                 xref_num = int(re.search(r'\d+', i).group())
-                if xref_num <= 496:
+                if '[PAGE_MISSING' in i:
+                    xref_list.append(i)
+                elif xref_num <= 1000:
                     try:
                         xref_match = df[df['num_match'] == i]
                         annotation = beehive.num_annotator(xref_match, i)
@@ -247,8 +250,6 @@ for row in df.index:
                         print(f'Cross-reference {i} in entry',
                               f"{df.loc[row, 'entry']} has a problem.")
                         xref_list.append(i)
-                elif '[PAGE_MISSING' in i:
-                    xref_list.append(i)
                 else:
                     for pid, contents in pages.items():
                         if xref_num in contents:
@@ -276,7 +277,9 @@ for row in df.index:
             xref_list.append(xref)
         elif beehive.find_numbers(xref) is True:
             xref_num = int(re.search(r'\d+', xref).group())
-            if xref_num <= 496:
+            if '[PAGE_MISSING' in xref:
+                xref_list.append(xref)
+            elif xref_num <= 1000:
                 try:
                     xref_match = df[df['num_match'] == xref]
                     annotation = beehive.num_annotator(xref_match, xref)
@@ -285,8 +288,6 @@ for row in df.index:
                     print(f'Cross-reference {xref} in entry',
                           f"{df.loc[row, 'entry']} has a problem.")
                     xref_list.append(xref)
-            elif '[PAGE_MISSING' in xref:
-                xref_list.append(xref)
             else:
                 for pid, contents in pages.items():
                     if xref_num in contents:
@@ -519,7 +520,7 @@ for row in df.index:
         else:
             key_list = crochets.get(head)
             for i in key_list:
-                xref = str(df.loc[df['pid'] == i]['head'].to_list)
+                xref = df.loc[df['pid'] == i]['head'].to_list()
                 xref = xref[0]
                 link = f"<a href='/digital-beehive/index5/{i}/'>{xref}</a>"
                 xref_list.append(link)
@@ -546,6 +547,8 @@ beehive.write_csv('data/alvearium-linked.csv', 'data/alpha5.csv',
                   ('T', 'U', 'W', 'X', 'Y', 'Z'), 'first_letter')
 beehive.write_num_csv('data/alvearium-linked.csv', 'data/num1.csv', 1, 250)
 beehive.write_num_csv('data/alvearium-linked.csv', 'data/num2.csv', 251, 500)
+beehive.write_num_csv('data/alvearium-linked.csv', 'data/num3.csv', 501, 725)
+beehive.write_num_csv('data/alvearium-linked.csv', 'data/num4.csv', 866, 1000)
 
 print('Creating individual files for the index...')
 

@@ -52,8 +52,12 @@ def num_annotator(entry, ref):
         num = int(entry['entry'])
     if int(num) <= 250:
         return f"<a href='/digital-beehive/num1/{pid}/'>{ref}</a>"
-    elif int(num) > 250:
+    elif int(num) <= 500:
         return f"<a href='/digital-beehive/num2/{pid}/'>{ref}</a>"
+    elif int(num) <= 725:
+        return f"<a href='/digital-beehive/num3/{pid}/'>{ref}</a>"
+    elif int(num) <= 1000:
+        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
 
 
 def corrections_annotator(entry, ref):

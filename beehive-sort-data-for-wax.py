@@ -211,7 +211,7 @@ with open('data/beehive-index-sorts.csv', 'r') as File:
     for row in index_reader:
         index_problems.update({row['head']: row['first_letter']})
 
-num_ranges = [range(n * 25 + 1, n * 25 + 26) for n in range(0, 20)]
+num_ranges = [range(n * 25 + 1, n * 25 + 26) for n in range(0, 40)]
 
 for row in df.index:
     if df.loc[row, 'pid'].startswith('alpha'):
