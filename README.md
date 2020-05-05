@@ -1,4 +1,4 @@
-# Beehive Scripts
+# Beehive Annotation Scripts
 
 This repository contains scripts that can be used to parse annotations as part of the [Digital Beehive Project](http://kislakcenter.github.io/digital-beehive). The scripts will parse a CSV of Beehive annotations and create paths to links for the linked entries section of the Digital Beehive Project.
 
