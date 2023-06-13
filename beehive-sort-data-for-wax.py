@@ -211,66 +211,72 @@ with open('data/beehive-index-sorts.csv', 'r') as File:
     for row in index_reader:
         index_problems.update({row['head']: row['first_letter']})
 
-num_ranges = [range(n * 25 + 1, n * 25 + 26) for n in range(0, 40)]
+num_ranges = [range(n * 25 + 1, n * 25 + 26) for n in range(0, 198)]
 
-for row in df.index:
-    if df.loc[row, 'pid'].startswith('alpha'):
-        entry = str(df.loc[row, 'entry'])
-        topic = str(df.loc[row, 'topic'])
-        if topic in alpha_problems:
-            letter = alpha_problems[topic]
-            df.loc[row, 'first_letter'] = letter
-        else:
-            try:
-                letter = topic[0].upper()
-                # Pastorius doesn't distinguish between I and J or U and V,
-                # following early-modern conventions, so we need to catch these
-                if letter == 'I':
-                    df.loc[row, 'first_letter'] = 'I/J'
-                elif letter == 'J':
-                    df.loc[row, 'first_letter'] = 'I/J'
-                elif letter == 'U':
-                    df.loc[row, 'first_letter'] = 'U/V'
-                elif letter == 'V':
-                    df.loc[row, 'first_letter'] = 'U/V'
-                else:
-                    df.loc[row, 'first_letter'] = letter
-            except IndexError:
-                print(f"Data for {df.loc[row,'pid']} needs clean-up.")
-    elif df.loc[row, 'pid'].startswith('index'):
-        head = str(df.loc[row, 'head'])
-        img_num = str(df.loc[row, 'image_number'])
-        test = img_num + head
-        # insertions are categorized separately
-        if df.loc[row, 'image_number'] == 54:
-            df.loc[row, 'first_letter'] = 'insertion'
-        # some entries appear twice in the index, so we have to check by
-        # both image number and head
-        elif test in index_problems:
-            letter = index_problems[test]
-            df.loc[row, 'first_letter'] = letter
-        else:
-            try:
-                letter = head[0].upper()
-                if letter == 'I':
-                    df.loc[row, 'first_letter'] = 'I/J'
-                elif letter == 'J':
-                    df.loc[row, 'first_letter'] = 'I/J'
-                elif letter == 'U':
-                    df.loc[row, 'first_letter'] = 'U/V'
-                elif letter == 'V':
-                    df.loc[row, 'first_letter'] = 'U/V'
-                else:
-                    df.loc[row, 'first_letter'] = letter
-            except IndexError:
-                print(f"Data for {df.loc[row,'pid']} needs clean-up.")
-    # numerical entries list the range they fall within as "first letter"
-    elif df.loc[row, 'pid'].startswith('num'):
-        entry = int(df.loc[row, 'entry'])
-        for i in num_ranges:
-            if entry in i:
-                letter = str(i[0]) + '-' + str(i[24])
+with open('issues_sort-metadata.txt', 'w') as issues:
+
+    for row in df.index:
+        if df.loc[row, 'pid'].startswith('alpha'):
+            entry = str(df.loc[row, 'entry'])
+            topic = str(df.loc[row, 'topic'])
+            if topic in alpha_problems:
+                letter = alpha_problems[topic]
                 df.loc[row, 'first_letter'] = letter
+            else:
+                try:
+                    letter = topic[0].upper()
+                    # Pastorius doesn't distinguish between I and J or U and V,
+                    # following early-modern conventions, so we need to catch these
+                    if letter == 'I':
+                        df.loc[row, 'first_letter'] = 'I/J'
+                    elif letter == 'J':
+                        df.loc[row, 'first_letter'] = 'I/J'
+                    elif letter == 'U':
+                        df.loc[row, 'first_letter'] = 'U/V'
+                    elif letter == 'V':
+                        df.loc[row, 'first_letter'] = 'U/V'
+                    else:
+                        df.loc[row, 'first_letter'] = letter
+                except IndexError:
+                    issues.writelines(f"Data for {df.loc[row,'pid']} needs clean-up.")
+                    print(f"Data for {df.loc[row,'pid']} needs clean-up.")
+        elif df.loc[row, 'pid'].startswith('index'):
+            head = str(df.loc[row, 'head'])
+            img_num = str(df.loc[row, 'image_number'])
+            test = img_num + head
+            # insertions are categorized separately
+            if df.loc[row, 'image_number'] == 54:
+                df.loc[row, 'first_letter'] = 'insertion'
+            # some entries appear twice in the index, so we have to check by
+            # both image number and head
+            elif test in index_problems:
+                letter = index_problems[test]
+                df.loc[row, 'first_letter'] = letter
+            else:
+                try:
+                    letter = head[0].upper()
+                    if letter == 'I':
+                        df.loc[row, 'first_letter'] = 'I/J'
+                    elif letter == 'J':
+                        df.loc[row, 'first_letter'] = 'I/J'
+                    elif letter == 'U':
+                        df.loc[row, 'first_letter'] = 'U/V'
+                    elif letter == 'V':
+                        df.loc[row, 'first_letter'] = 'U/V'
+                    else:
+                        df.loc[row, 'first_letter'] = letter
+                except IndexError:
+                    issues.writelines(f"Data for {df.loc[row,'pid']} needs clean-up.")
+                    print(f"Data for {df.loc[row,'pid']} needs clean-up.")
+        # numerical entries list the range they fall within as "first letter"
+        elif df.loc[row, 'pid'].startswith('num'):
+            entry = int(df.loc[row, 'entry'])
+            for i in num_ranges:
+                if entry in i:
+                    letter = str(i[0]) + '-' + str(i[24])
+                    df.loc[row, 'first_letter'] = letter
+
+issues.close()
 
 # line = pd.DataFrame(
 # {'volume': 'Volume 0', 'image_number': 0, 'unparsed': 'Force UTF-8: büngt'},
@@ -282,6 +288,7 @@ df['thumbnail'] = ''  # create empty thumbnail column for next part of the code
 new_csv = df.to_csv('data/beehive-data-temp.csv', index=False)
 
 selec = re.compile(r',\d+,\d+/full')
+
 
 print('Creating thumbnails...')
 
@@ -329,17 +336,22 @@ with open('data/master_toc.csv', 'r') as f:
     toc = get_pids(f)
 
 df['location'] = ''
-for row in df.index:
-    volume = str(df.loc[row, 'volume'])
-    volume = volume.strip('Volume ')
-    image = str(df.loc[row, 'image_number']).zfill(3)
-    loc = f'{volume}.{image}'
-    try:
-        pid = toc[loc]
-        pid_link = f"<a href='/digital-beehive/toc/{pid}/'>Full Page</a>"
-        df.loc[row, 'location'] = pid_link
-    except:
-        print(f"Data bad for {df.loc[row,'pid']}.")
+
+with open('issues_sort-toc.txt', 'w') as issues:
+    for row in df.index:
+        volume = str(df.loc[row, 'volume'])
+        volume = volume.strip('Volume ')
+        image = str(df.loc[row, 'image_number']).zfill(3)
+        loc = f'{volume}.{image}'
+        try:
+            pid = toc[loc]
+            pid_link = f"<a href='/digital-beehive/toc/{pid}/'>Full Page</a>"
+            df.loc[row, 'location'] = pid_link
+        except:
+            issues.writelines(f"Data for {df.loc[row,'pid']} needs clean-up.")
+            print(f"Data bad for {df.loc[row,'pid']}.")
+
+issues.close()
 
 # line = pd.DataFrame(
 # {'volume': 'Volume 0', 'image_number': 0, 'unparsed': 'Force UTF-8: büngt'},

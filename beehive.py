@@ -58,6 +58,21 @@ def num_annotator(entry, ref):
         return f"<a href='/digital-beehive/num3/{pid}/'>{ref}</a>"
     elif int(num) <= 1000:
         return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+    elif int(num) <= 1250:
+        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+    elif int(num) <= 1500:
+        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+    elif int(num) <= 1750:
+        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+    elif int(num) <= 2000:
+        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+    elif int(num) <= 2250:
+        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+    elif int(num) <= 4495:
+        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+    elif int(num) <= 4927:
+        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+
 
 
 def corrections_annotator(entry, ref):
