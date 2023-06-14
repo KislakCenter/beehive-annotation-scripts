@@ -1,0 +1,308 @@
+Cross-reference 11 [Ill names] in entry Accusation has a problem.
+Cross-reference Gods affection in entry Adversity has a problem.
+Cross-reference 1078 [Anagram] in entry Anagram has a problem.
+Cross-reference Esslesiastical discipline in entry Anathema has a problem.
+Cross-reference 852 [Confirmation] in entry Approbation has a problem.
+Cross-reference 4831 [WORD_ILLEGIBLE] in entry Baldness has a problem.
+Cross-reference 34 [Pilgrimage] in entry Banishment has a problem.
+Cross-reference 4615 [Brewing] in entry Beer has a problem.
+Cross-reference 705 [Believe] in entry Believe has a problem.
+Cross-reference 382 [Neger] in entry Blackness has a problem.
+Cross-reference 181 [Nickname] in entry Blockhead has a problem.
+Cross-reference 1893 [Be[tro]thing or Espousing] in entry Bride & Bridegroom has a problem.
+Cross-reference 1436 [Buffoons] in entry Buffoonry has a problem.
+Cross-reference 1632 [To Buy] in entry to Buy has a problem.
+Cross-reference 183 [Motive] in entry Cause has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Ceremony has a problem.
+Cross-reference 1061 [Whelp] in entry Child has a problem.
+Cross-reference 1599 [Circumsion] in entry Circumcision has a problem.
+Cross-reference 1041 [Com[m]andents] in entry Com[m]andments has a problem.
+Cross-reference 837 [Unity] in entry Communion has a problem.
+Cross-reference 1301 [Easy in Living] in entry Contentment has a problem.
+Cross-reference Oppression in entry Cruelty has a problem.
+Cross-reference 515 [horrid Cruelties, practised by the Papists upon Protestants] in entry Cruelty has a problem.
+Cross-reference 1730 [Cuckolds] in entry Cuckow has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Dammage has a problem.
+Cross-reference 907 [Pinch] in entry Danger has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Deprecation has a problem.
+Cross-reference 809 [Tares] in entry Dirt has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Discipline has a problem.
+Cross-reference Desperation in entry Distrust has a problem.
+Cross-reference 1371 [WORD_MISSING] in entry Divinity has a problem.
+Cross-reference 26 [Excommunication] in entry Ecclesiastical discipline has a problem.
+Cross-reference 1647 [Eel] in entry Eel has a problem.
+Cross-reference 4773 [Like as] in entry Equality has a problem.
+Cross-reference 474 [Immortality] in entry Eternity has a problem.
+Cross-reference talker of trifles in entry Fable has a problem.
+Cross-reference 712 [Departure] in entry Farewell has a problem.
+Cross-reference 1386 [Fashion of the Country] in entry Fashion of the Country has a problem.
+Cross-reference Disfavour in entry Favour has a problem.
+Cross-reference 1359 [Favour] in entry Favour has a problem.
+Cross-reference 1093 [holy days] in entry Feasts has a problem.
+Cross-reference 1669 [Forebearance] in entry Forbearance has a problem.
+Cross-reference 1049 [Persecution] in entry Force has a problem.
+Cross-reference 1159 [Fortune] in entry Fortune has a problem.
+Cross-reference 1052 [Free will] in entry Free will has a problem.
+Cross-reference familiarity in entry Friendship has a problem.
+Cross-reference 16 [Poverty parts good friendship] in entry Friendship has a problem.
+Cross-reference 1071 [Funeral Comendation] in entry Funeral has a problem.
+Cross-reference 1012 [h. Ghost] in entry Holy Ghost has a problem.
+Cross-reference post titulos decem in entry Governmt has a problem.
+Cross-reference 361 [Giant] in entry Greatness has a problem.
+Cross-reference 1337 [Hair and Perriwigs] in entry Hair has a problem.
+Cross-reference Balance in entry Heaviness has a problem.
+Cross-reference 833 [Weight] in entry Heaviness has a problem.
+Cross-reference 723 [Cock] in entry Hen has a problem.
+Cross-reference 1700 [Inheritage] in entry Heritage has a problem.
+Cross-reference 2266 [Herring] in entry Herring has a problem.
+Cross-reference 34 [Pilgrimage] in entry Home has a problem.
+Cross-reference 1446 [Dwell] in entry Home has a problem.
+Cross-reference 1415 [Hospital at Glaucha] in entry Hospital has a problem.
+Cross-reference 1184 [house] in entry House has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Imitation has a problem.
+Cross-reference 1010 [The Following of Christ] in entry Imitation of Christ has a problem.
+Cross-reference 319 [Righteousness] in entry Justification has a problem.
+Cross-reference 473 [English tongue] in entry Language has a problem.
+Cross-reference 2298 [Last words] in entry Last words has a problem.
+Cross-reference 655 [Stern] in entry To Look has a problem.
+Cross-reference 1623 [Love potions] in entry Love potions has a problem.
+Cross-reference Vespers in entry Mass has a problem.
+Cross-reference 1323 [Master] in entry Master has a problem.
+Cross-reference 802 [Contemplation] in entry Meditation has a problem.
+Cross-reference 1004 [Christ's outward Satisfaction] in entry Merit has a problem.
+Cross-reference 716 [Unhappy] in entry Misfortune has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Nature has a problem.
+Cross-reference 1656 [New] in entry New has a problem.
+Cross-reference 1252 [News] in entry News has a problem.
+Cross-reference 1518 [Oracle] in entry Oracle has a problem.
+Cross-reference 420 [Absolute Forgiveness] in entry Pardon has a problem.
+Cross-reference 4811 [WORD_MISSING] in entry Parents has a problem.
+Cross-reference 115 [Expenses] in entry Parsimony has a problem.
+Cross-reference 283 [Fellowship] in entry Partakers has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Patience has a problem.
+Cross-reference 603 [Tranquility] in entry Peace has a problem.
+Cross-reference 105 [Pretender to Learning] in entry Pedantry has a problem.
+Cross-reference downright Scholar in entry Pedantry has a problem.
+Cross-reference Compulsion in entry Persecution has a problem.
+Cross-reference 793 [Workhouse] in entry Prison has a problem.
+Cross-reference essay in entry Proof has a problem.
+Cross-reference argument in entry Proof has a problem.
+Cross-reference 1113 [Punishment] in entry Punishment has a problem.
+Cross-reference 2001 [Purpose] in entry Purpose has a problem.
+Cross-reference 1053 [Objections of the Quakers answered] in entry Quaker has a problem.
+Cross-reference 1708 [quarter granted] in entry winter Quarters has a problem.
+Cross-reference 1566 [Quicksilver] in entry Quicksilver has a problem.
+Cross-reference 37 [[Railing]] in entry Railing has a problem.
+Cross-reference 355 [Old and obsolete] in entry Rarity has a problem.
+Cross-reference 1049 [of Compulsion in Matters of Religion] in entry Rape has a problem.
+Cross-reference 1344 [Corinths] in entry Redhaired has a problem.
+Cross-reference 1343 [Red-(:hair:) face] in entry Redhaired has a problem.
+Cross-reference 920 [Deliverance] in entry Redemption has a problem.
+Cross-reference Old rags in entry Reliques has a problem.
+Cross-reference 1363 [Pardon and Remission of Sins] in entry Remission of Sins has a problem.
+Cross-reference 829 [Esteem] in entry Reputation has a problem.
+Cross-reference 2181 [Ringleader] in entry Ringleader has a problem.
+Cross-reference 1181 [Mourning, Sadness] in entry Sadness has a problem.
+Cross-reference 1199 [Itch] in entry Scab has a problem.
+Cross-reference 971 [Sense] in entry Sense has a problem.
+Cross-reference 382 [Neger] in entry Servitude has a problem.
+Cross-reference 762 [Face] in entry Shape has a problem.
+Cross-reference 763 [Form] in entry Shape has a problem.
+Cross-reference 1740 [Sighs] in entry Sighs has a problem.
+Cross-reference 534 [Comparison in entry Similitude has a problem.
+Cross-reference 1358 [Star] in entry Star has a problem.
+Cross-reference 1284 [Whetstone] in entry Stone has a problem.
+Cross-reference waspish in entry Stubborness has a problem.
+Cross-reference 866 [Retain] in entry Student has a problem.
+Cross-reference 2207 [devil's Sucking the Sorceress] in entry Suck has a problem.
+Cross-reference 1245 [Superfluous] in entry Superfluity has a problem.
+Cross-reference 861 [Seamster] in entry Tailor has a problem.
+Cross-reference 604 [To sell] in entry Tailor has a problem.
+Cross-reference 120 [Provocation] in entry Temptation has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Too hasty has a problem.
+Cross-reference too late in entry Too slow or quick has a problem.
+Cross-reference 109 [A Shopkeeper] in entry Trade has a problem.
+Cross-reference 350 [Butcher] in entry Trade has a problem.
+Cross-reference hearsay in entry Tradition has a problem.
+Cross-reference 1990 [Vineyards] in entry Vineyard has a problem.
+Cross-reference 2070 [unbelief] in entry Unbelief has a problem.
+Cross-reference Professors in entry University has a problem.
+Cross-reference 262 [In cognito] in entry Unknown has a problem.
+Cross-reference 2251 [unmerciful] in entry Unmercifullness has a problem.
+Cross-reference 816 [Gluttony] in entry Voracity has a problem.
+Cross-reference 1546 [Water] in entry Water has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry Whoredom has a problem.
+Cross-reference 1019 [Gods Will] in entry Will of God has a problem.
+Cross-reference 1535 [Lycanthropia] in entry Wolf has a problem.
+Cross-reference 798 [Timber] in entry Wood has a problem.
+Cross-reference 1418 [To remit] in entry Year has a problem.
+Cross-reference 934 [Boy] in entry Youth has a problem.
+Cross-reference 27 [Lukewarm] in entry Zeal has a problem.
+Cross-reference 2301 [After Sowre comes Sweet] in entry 4 has a problem.
+Cross-reference 728 [Swooning] in entry 35 has a problem.
+Cross-reference 616 [Phanatick] in entry 35 has a problem.
+Cross-reference 1160 [a Little is Sufficient] in entry 45 has a problem.
+Cross-reference Soundness of Doctrine in entry 46 has a problem.
+Cross-reference 1681 [Metempsychosis] in entry 55 has a problem.
+Cross-reference 1293 [Vain man] in entry 57 has a problem.
+Cross-reference 1484 [Soli deo gloria] in entry 82 has a problem.
+Cross-reference 1511 [Protestant] in entry 83 has a problem.
+Cross-reference Bluntness in entry 96 has a problem.
+Cross-reference 668 [Clown] in entry 108 has a problem.
+Cross-reference blunt in entry 108 has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry 131 has a problem.
+Cross-reference 801 [Rude] in entry 134 has a problem.
+Cross-reference Staid man in entry 143 has a problem.
+Cross-reference 64 [Sin in his punishmt] in entry 150 has a problem.
+Cross-reference Taste in entry 158 has a problem.
+Cross-reference Distilling in entry 166 has a problem.
+Cross-reference 731 [Hermaphrodite] in entry 167 has a problem.
+Cross-reference Change of S in entry 167 has a problem.
+Cross-reference 1651 [Art] in entry 169 has a problem.
+Cross-reference 792 [Unconcerned] in entry 176 has a problem.
+Cross-reference 2417 [Spider & their webs] in entry 177 has a problem.
+Cross-reference 837 [Unity] in entry 191 has a problem.
+Cross-reference 1737 [Womens Imperiousness] in entry 192 has a problem.
+Cross-reference 1512 [Thee & Thou] in entry 217 has a problem.
+Cross-reference 1953 [succession] in entry 221 has a problem.
+Cross-reference 1685 [Points of Christian religion] in entry 226 has a problem.
+Cross-reference Rope in entry 229 has a problem.
+Cross-reference 889 [Kitchin] in entry 236 has a problem.
+Cross-reference 748 [Vanish] in entry 244 has a problem.
+Cross-reference 852 [Perish] in entry 244 has a problem.
+Cross-reference 1826 [Embleme] in entry 250 has a problem.
+Cross-reference To court in entry 253 has a problem.
+Cross-reference 256 [Etymology] in entry 256 has a problem.
+Cross-reference Etymologies in entry 256 has a problem.
+Cross-reference 406 [Infinite] in entry 260 has a problem.
+Cross-reference Secretary in entry 260 has a problem.
+Cross-reference 36 [God with & in men] in entry 267 has a problem.
+Cross-reference 268 [To Leave off] in entry 268 has a problem.
+Cross-reference 754 [Shift] in entry 271 has a problem.
+Cross-reference 1278 [Original Sin] in entry 279 has a problem.
+Cross-reference for Instance in entry 290 has a problem.
+Cross-reference Fool & folly in entry 299 has a problem.
+Cross-reference folly in entry 299 has a problem.
+Cross-reference 830 [Bever] in entry 304 has a problem.
+Cross-reference 1218 [Breakfast] in entry 304 has a problem.
+Cross-reference 4846 [Sons. Sonship] in entry 311 has a problem.
+Cross-reference 1584 [Poets] in entry 314 has a problem.
+Cross-reference 2190 [Sin agt. the h. Ghost] in entry 320 has a problem.
+Cross-reference 777 [Both] in entry 332 has a problem.
+Cross-reference 1738 [birds] in entry 341 has a problem.
+Cross-reference 1135 [unthankfulness] in entry 347 has a problem.
+Cross-reference 764 [Sailer] in entry 354 has a problem.
+Cross-reference 1288 [Murmuring] in entry 367 has a problem.
+Cross-reference 1264 [false Teachers] in entry 373 has a problem.
+Cross-reference 643 [Temporizing] in entry 377 has a problem.
+Cross-reference 686 [Chiding] in entry 381 has a problem.
+Cross-reference Im[m]ensity in entry 406 has a problem.
+Cross-reference 1263 [Inspiration] in entry 412 has a problem.
+Cross-reference 772 [Whole] in entry 415 has a problem.
+Cross-reference Lunaticks in entry 417 has a problem.
+Cross-reference 4518 [Incubi] in entry 437 has a problem.
+Cross-reference 16 [Poverty parts good friendship] in entry 443 has a problem.
+Cross-reference 450 [Pen[n]ance] in entry 448 has a problem.
+Cross-reference 4482 [Contempt] in entry 470 has a problem.
+Cross-reference 1560 [Mistakes] in entry 470 has a problem.
+Cross-reference 4885 [Shames] in entry 478 has a problem.
+Cross-reference 1514 [Caribee Islands] in entry 485 has a problem.
+Cross-reference Affliction in entry 498 has a problem.
+Cross-reference 1801 [Penn] in entry 501 has a problem.
+Cross-reference Body of Christ in entry 527 has a problem.
+Cross-reference 256 [Allusion] in entry 534 has a problem.
+Cross-reference 732 [Best] in entry 535 has a problem.
+Cross-reference Well done in entry 535 has a problem.
+Cross-reference 732 [Best] in entry 535 has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry 539 has a problem.
+Cross-reference 772 [Whole] in entry 569 has a problem.
+Cross-reference Carnal Knowledge in entry 570 has a problem.
+Cross-reference [WORD_ILLEGIBLE] in entry 576 has a problem.
+Cross-reference Zeit in entry 578 has a problem.
+Cross-reference 752 [Deputy] in entry 586 has a problem.
+Cross-reference 1759 [ill natur'd men] in entry 589 has a problem.
+Cross-reference 166 [Brandywine] in entry 592 has a problem.
+Cross-reference a Sore in entry 599 has a problem.
+Cross-reference 633 [Strength] in entry 605 has a problem.
+Cross-reference Instigation in entry 606 has a problem.
+Cross-reference 299 [Fancies] in entry 616 has a problem.
+Cross-reference 2262 [Pflegm or Flegm] in entry 621 has a problem.
+Cross-reference 1240 [help] in entry 627 has a problem.
+Cross-reference 1307 [Refining upon other Mens' Actions] in entry 629 has a problem.
+Cross-reference 807 [Delineation] in entry 636 has a problem.
+Cross-reference 807 [Delineation] in entry 641 has a problem.
+Cross-reference 1798 [the Ignorance] in entry 642 has a problem.
+Cross-reference 1702 [Maize] in entry 664 has a problem.
+Cross-reference 1542 [Of homerical Medicines] in entry 665 has a problem.
+Cross-reference 1245 [Superfluous, Needless] in entry 666 has a problem.
+Cross-reference 58 [Condescension] in entry 667 has a problem.
+Cross-reference 766 [Concoction] in entry 678 has a problem.
+Cross-reference 1747 [Scurrilous Epithets] in entry 680 has a problem.
+Cross-reference 2136 [Fat. Sewet] in entry 698 has a problem.
+Cross-reference Opportunity in entry 706 has a problem.
+Cross-reference 578 [Seaonable] in entry 706 has a problem.
+Cross-reference Trust in entry 719 has a problem.
+Cross-reference 586 [Represent] in entry 721 has a problem.
+Cross-reference Pomp in entry 866 has a problem.
+Cross-reference 733 [Pot] in entry 871 has a problem.
+Cross-reference 1428 [Promises] in entry 872 has a problem.
+Cross-reference 1146 [Peacemak] in entry 888 has a problem.
+Cross-reference 807 [Line] in entry 892 has a problem.
+Cross-reference 1813 [Lay-people] in entry 899 has a problem.
+Cross-reference 781 [Pomp] in entry 912 has a problem.
+Cross-reference 1389 [Courting women] in entry 912 has a problem.
+Cross-reference 2410 [Carelesness & Security] in entry 914 has a problem.
+Cross-reference Turn in entry 916 has a problem.
+Cross-reference 1028 [H. Scriptures] in entry 922 has a problem.
+Cross-reference 1365 [Rebuke, Reprove] in entry 928 has a problem.
+Cross-reference 1203 [Faults & failings] in entry 956 has a problem.
+Cross-reference 1383 [To bear] in entry 983 has a problem.
+Cross-reference 1094 [Philada] in entry 1000 has a problem.
+Cross-reference 1095 [Wm. Pen[n]] in entry 1000 has a problem.
+Cross-reference heretick in entry 1001 has a problem.
+Cross-reference 2434 [holy Ghost] in entry 1012 has a problem.
+Cross-reference 2235 [h: Scriptures] in entry 1028 has a problem.
+Cross-reference 4876 [God's work] in entry 1057 has a problem.
+Cross-reference Christians in entry 1064 has a problem.
+Cross-reference Much in entry 1067 has a problem.
+Cross-reference 1351 [Funeral Com[m]endation] in entry 1071 has a problem.
+Cross-reference 1579 [PostScript] in entry 1083 has a problem.
+Cross-reference Suppress in entry 1093 has a problem.
+Cross-reference Recom[m]endation in entry 1112 has a problem.
+Cross-reference 4853 [Self opinionated] in entry 1121 has a problem.
+Cross-reference 4863 [Agriculture & Country Life] in entry 1130 has a problem.
+Cross-reference Cord in entry 1136 has a problem.
+Cross-reference Rope in entry 1136 has a problem.
+Cross-reference 1900 [Peacemak.] in entry 1146 has a problem.
+Cross-reference 1888 [Anger] in entry 1157 has a problem.
+Cross-reference Smart in entry 1158 has a problem.
+Cross-reference 1284 [Whetstone] in entry 1167 has a problem.
+Cross-reference Excess in entry 1175 has a problem.
+Cross-reference Indulgence in entry 1192 has a problem.
+Cross-reference Rule in entry 1202 has a problem.
+Cross-reference Natural man in entry 1248 has a problem.
+Cross-reference 220 [Meetinghouses] in entry 1276 has a problem.
+Cross-reference 2211 [Gnashing the toothe] in entry 1286 has a problem.
+Cross-reference 2288 [Mountebanck] in entry 1333 has a problem.
+Cross-reference 2248 [English Church] in entry 1360 has a problem.
+Cross-reference plundering in entry 1416 has a problem.
+Cross-reference 4869 [Excuse] in entry 1427 has a problem.
+Cross-reference 1932 [Holiness of] in entry 1440 has a problem.
+Cross-reference 1329 [Perfection] in entry 1465 has a problem.
+Cross-reference 4446 [WORD_MISSING] in entry 1560 has a problem.
+Cross-reference 4841 [WORD_MISSING] in entry 1593 has a problem.
+Cross-reference 1563 [Menstrua] in entry 1654 has a problem.
+Cross-reference 551 [WORD_ILLEGIBLE; Dumb] in entry 1654 has a problem.
+Cross-reference 1551 [Wafer] in entry 1668 has a problem.
+Cross-reference 2281 [Turn in. Inward] in entry 1671 has a problem.
+Cross-reference 4466 [WORD_MISSING] in entry 1694 has a problem.
+Cross-reference 4851 [WORD_MISSING] in entry 1715 has a problem.
+Cross-reference 4914 [[WORD_ILLEGIBLE]] in entry 1963 has a problem.
+Cross-reference 1431 [Atheism] in entry 1983 has a problem.
+Cross-reference 320 [Sin agt the holy Ghost] in entry 2190 has a problem.
+Cross-reference 2288 [Mountebanck] in entry 2229 has a problem.
+Cross-reference 2433 [Sorcery or Witchcraft] in entry 2252 has a problem.
+Cross-reference To Court in entry 2255 has a problem.
+Cross-reference 4451 [[WORD_ILLEGIBLE]] in entry 4455 has a problem.
+Cross-reference 2030 [Love of the Bretheren] in entry 4455 has a problem.
+Cross-reference Hactenu's ex W.T. [] in entry 4455 has a problem.

@@ -59,19 +59,19 @@ def num_annotator(entry, ref):
     elif int(num) <= 1000:
         return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
     elif int(num) <= 1250:
-        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+        return f"<a href='/digital-beehive/num5/{pid}/'>{ref}</a>"
     elif int(num) <= 1500:
-        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+        return f"<a href='/digital-beehive/num6/{pid}/'>{ref}</a>"
     elif int(num) <= 1750:
-        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+        return f"<a href='/digital-beehive/num7/{pid}/'>{ref}</a>"
     elif int(num) <= 2000:
-        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+        return f"<a href='/digital-beehive/num8/{pid}/'>{ref}</a>"
     elif int(num) <= 2250:
-        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+        return f"<a href='/digital-beehive/num9/{pid}/'>{ref}</a>"
     elif int(num) <= 4495:
-        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+        return f"<a href='/digital-beehive/num10/{pid}/'>{ref}</a>"
     elif int(num) <= 4927:
-        return f"<a href='/digital-beehive/num4/{pid}/'>{ref}</a>"
+        return f"<a href='/digital-beehive/num11/{pid}/'>{ref}</a>"
 
 
 

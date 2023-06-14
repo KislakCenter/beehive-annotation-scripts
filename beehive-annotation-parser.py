@@ -256,7 +256,7 @@ with open('issues_parse_alvearium_xref.txt', 'w') as issues:
                     xref_num = int(re.search(r'\d+', i).group())
                     if '[PAGE_MISSING' in i:
                         xref_list.append(i)
-                    elif xref_num <= 1000:
+                    elif xref_num <= 4927:
                         try:
                             xref_match = df[df['num_match'] == i]
                             annotation = beehive.num_annotator(xref_match, i)
@@ -298,7 +298,7 @@ with open('issues_parse_alvearium_xref.txt', 'w') as issues:
                 xref_num = int(re.search(r'\d+', xref).group())
                 if '[PAGE_MISSING' in xref:
                     xref_list.append(xref)
-                elif xref_num <= 1000:
+                elif xref_num <= 4927:
                     try:
                         xref_match = df[df['num_match'] == xref]
                         annotation = beehive.num_annotator(xref_match, xref)
@@ -611,12 +611,10 @@ beehive.write_num_csv('data/alvearium-linked.csv', 'data/num4.csv', 866, 1000)
 beehive.write_num_csv('data/alvearium-linked.csv', 'data/num5.csv', 1001, 1250)
 beehive.write_num_csv('data/alvearium-linked.csv', 'data/num6.csv', 1251, 1500)
 beehive.write_num_csv('data/alvearium-linked.csv', 'data/num7.csv', 1501, 1750)
-beehive.write_num_csv('data/alvearium-linked.csv', 'data/num8.csv', 1501, 1750)
-beehive.write_num_csv('data/alvearium-linked.csv', 'data/num9.csv', 1751, 2000)
-beehive.write_num_csv('data/alvearium-linked.csv', 'data/num10.csv', 2001, 2250)
-beehive.write_num_csv('data/alvearium-linked.csv', 'data/num11.csv', 2001, 2250)
-beehive.write_num_csv('data/alvearium-linked.csv', 'data/num12.csv', 2251, 4495)
-beehive.write_num_csv('data/alvearium-linked.csv', 'data/num13.csv', 4496, 4927)
+beehive.write_num_csv('data/alvearium-linked.csv', 'data/num8.csv', 1751, 2000)
+beehive.write_num_csv('data/alvearium-linked.csv', 'data/num9.csv', 2001, 2250)
+beehive.write_num_csv('data/alvearium-linked.csv', 'data/num10.csv', 2251, 4495)
+beehive.write_num_csv('data/alvearium-linked.csv', 'data/num11.csv', 4496, 4927)
 
 print('Creating individual files for the index...')
 
